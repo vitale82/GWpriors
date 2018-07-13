@@ -1,6 +1,6 @@
 ## GWpriors
 
-####Data release supporting *Vitale et al., PRL  119, 251103 (2017)* 
+### Data release supporting *Vitale et al., PRL  119, 251103 (2017)* 
 
 This repository contains results from parameter estimation on the first gravitational-waves events detected by LIGO, as presented by Vitale et al. [PRL  119, 251103 (2017)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.119.251103) [arXiv:1707.04637](https://arxiv.org/abs/1707.04637).
 
