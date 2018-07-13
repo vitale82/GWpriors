@@ -169,7 +169,7 @@ chi_eff_prior=data['priors']['chi_eff']
 
 
 Finally, the `PSD` group contains one group for each of the interferometers used in the analysis, H and L.
-The PSD were generated with the BayesWave algorithm [Cornish and Littenberg, CQG 32, 13](http://iopscience.iop.org/article/10.1088/0264-9381/32/13/135012)/
+The PSD were generated with the BayesWave algorithm [Littenberg and Cornish, PRD 91, 084034](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.91.084034)/
 
 There are two datasets for each interferometer, 
 
