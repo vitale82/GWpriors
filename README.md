@@ -94,7 +94,7 @@ All masses above are in the detector frame. We convert them to source-frame mass
 The redshift is obtained from the gravitational-wave luminosity distance, assuming a [Plack 2015 cosmology](https://www.aanda.org/articles/aa/abs/2016/10/aa25830-15/aa25830-15.html). The values of the cosmological parameters are stored as attributes of the `posteriors` group:
 
 ```python
-for (k,v) in data'posteriors'.attrs.iteritems():
+for (k,v) in data['posteriors'].attrs.iteritems():
 	print k,v
 
 omega_matter 0.3065
@@ -118,7 +118,7 @@ The units of each parameter are given as attribute of the corresponding dataset.
 ```python
 import pylab as plt
 data=h5py.File('GW150914.hdf5','r')
-dist=data'posteriors'['distance']
+dist=data['posteriors']['distance']
 units=dist.attrs['units']
 plt.hist(dist,50)
 plt.xlabel('Distance [%s]'%units)
@@ -131,13 +131,13 @@ The nested sampling computes the evidence of the data under the signal hypothesi
 We report the natural log of the evidence of the signal hypothesis under all priors as an attribute of the `posterior/PX group`, e.g.
 
 ```python
-lognat_signal_evidence=data'posteriors'.attrs['signal_evidence']
+lognat_signal_evidence=data['posteriors'].attrs['signal_evidence']
 ```
 
 and the natural log of the noise hypothesis
 
 ```python
-lognat_noise_evidence=data'posteriors'.attrs['noise_evidence']
+lognat_noise_evidence=data['posteriors'].attrs['noise_evidence']
 ```
 
 The (natural log of the) Bayes Factor signal vs noise (e.g [LVC, PRL 116, 241102](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.116.241102), Table I) can thus be calculated as
@@ -149,8 +149,8 @@ BayesSN=lognat_signal_evidence-lognat_noise_evidence
 Finally, the natural log of the Bayes factor between two different priors can be otained as e.g.
 
 ```python
-p1_signev=data'posteriors'.attrs['signal_evidence']
-p5_signev=data'posteriors'.attrs['signal_evidence']
+p1_signev=data['posteriors'].attrs['signal_evidence']
+p5_signev=data['posteriors'].attrs['signal_evidence']
 BayesP1P5=p1_signev-p5_signev # = 3.84
 ```
 
@@ -163,7 +163,7 @@ The `priors` group contains samples drawn from the priors P1..P8 (each in the co
 To access e.g. the chi_eff P8 prior for GW150914
 
 ```python
-chi_eff_prior=data'priors'['chi_eff']
+chi_eff_prior=data['priors']['chi_eff']
 ```
 
 
@@ -181,8 +181,8 @@ Those will be different for different events, but the same for all priors.
 Thus, to plot the power spectrum used in the analysis of GW150914:
 
 ```python
-h1psd=data'PSD'
-l1psd=data'PSD'
+h1psd=data['PSD']
+l1psd=data['PSD']
 plt.loglog(h1psd['frequency'],h1psd['power_spectrum'],'r',label='H')
 plt.loglog(l1psd['frequency'],l1psd['power_spectrum'],'b',label='L')
 ```
