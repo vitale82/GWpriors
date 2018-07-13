@@ -51,9 +51,9 @@ In turns, the priors and posteriors groups contain 8 subgroups, one for each of 
 So for example (using python):
 
 ```python
-import hdf5
+import h5py
 data=h5py.File('GW150914.hdf5','r')
-data'posteriors'
+data['posteriors']
 ```
 
 gives you access to the posterior distributions obtained using the P1 prior (that is the same prior used by the LIGO and Virgo collaborations).
