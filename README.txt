@@ -1,4 +1,6 @@
-Each hdf5 file contains posteriors samples obtained using the 8 priors described in Vitale et al, PRL  119, 251103 (2017)
+Each hdf5 file contains posteriors samples obtained using the 8 priors described in Vitale et al, PRL  119, 251103 (2017).
+
+The posteriors describes analysis on data avaliable from the LIGO Open Science Center (https://losc.ligo.org/events/).
 
 The hdf5 file contains three groups: priors, posteriors, PSD (that is, power spectral density).
 
