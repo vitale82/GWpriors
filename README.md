@@ -26,7 +26,7 @@ archivePrefix = "arXiv",
 }
 ```
 
-Yiu can also cite this repository specifically, with its DOI: ADD ZENODO BADGE.
+You can also cite this repository specifically, with its DOI: ADD ZENODO BADGE.
 
 If you need help with this, feel free to contact [Salvo](https://github.com/vitale82), [Davide](https://github.com/dgerosa), [Carl](https://github.com/cjhaster), [Katerina](https://github.com/kchatziioannou) or [Aaron](https://github.com/aaronbzimmerman).
 
