@@ -26,7 +26,7 @@ archivePrefix = "arXiv",
 }
 ```
 
-If, for any reason, you need to cite this repository specifically, the DOI is: ADD ZENODO BADGE.
+Yiu can also cite this repository specifically, with its DOI: ADD ZENODO BADGE.
 
 If you need help with this, feel free to contact [Salvo](https://github.com/vitale82), [Davide](https://github.com/dgerosa), [Carl](https://github.com/cjhaster), [Katerina](https://github.com/kchatziioannou) or [Aaron](https://github.com/aaronbzimmerman).
 
@@ -53,7 +53,7 @@ So for example (using python):
 ```python
 import h5py
 data=h5py.File('GW150914.hdf5','r')
-data['posteriors']
+data['posteriors']['P1']
 ```
 
 gives you access to the posterior distributions obtained using the P1 prior (that is the same prior used by the LIGO and Virgo collaborations).
@@ -118,7 +118,7 @@ The units of each parameter are given as attribute of the corresponding dataset.
 ```python
 import pylab as plt
 data=h5py.File('GW150914.hdf5','r')
-dist=data['posteriors']['distance']
+dist=data['posteriors']['P3']['distance']
 units=dist.attrs['units']
 plt.hist(dist,50)
 plt.xlabel('Distance [%s]'%units)
@@ -131,13 +131,13 @@ The nested sampling computes the evidence of the data under the signal hypothesi
 We report the natural log of the evidence of the signal hypothesis under all priors as an attribute of the `posterior/PX group`, e.g.
 
 ```python
-lognat_signal_evidence=data['posteriors'].attrs['signal_evidence']
+lognat_signal_evidence=data['posteriors']['P1'].attrs['signal_evidence']
 ```
 
 and the natural log of the noise hypothesis
 
 ```python
-lognat_noise_evidence=data['posteriors'].attrs['noise_evidence']
+lognat_noise_evidence=data['posteriors']['P1'].attrs['noise_evidence']
 ```
 
 The (natural log of the) Bayes Factor signal vs noise (e.g [LVC, PRL 116, 241102](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.116.241102), Table I) can thus be calculated as
@@ -149,8 +149,8 @@ BayesSN=lognat_signal_evidence-lognat_noise_evidence
 Finally, the natural log of the Bayes factor between two different priors can be otained as e.g.
 
 ```python
-p1_signev=data['posteriors'].attrs['signal_evidence']
-p5_signev=data['posteriors'].attrs['signal_evidence']
+p1_signev=data['posteriors']['P1'].attrs['signal_evidence']
+p5_signev=data['posteriors']['P5'].attrs['signal_evidence']
 BayesP1P5=p1_signev-p5_signev # = 3.84
 ```
 
@@ -163,7 +163,7 @@ The `priors` group contains samples drawn from the priors P1..P8 (each in the co
 To access e.g. the chi_eff P8 prior for GW150914
 
 ```python
-chi_eff_prior=data['priors']['chi_eff']
+chi_eff_prior=data['priors']['P8']['chi_eff']
 ```
 
 
