@@ -37,7 +37,7 @@ If you need help with this, feel free to contact [Salvo](https://github.com/vita
 Each `hdf5` file contains posteriors samples obtained using the 8 priors described in Vitale et al,  [PRL  119, 251103 (2017)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.119.251103).
 
 The posteriors describes analysis on data available from the [LIGO Open Science Center](https://losc.ligo.org/events/).
-LIGO and Virgo have released posteriors for the O1 events [here](https://dcc.ligo.org/LIGO-T1800235/public), those are equivalent to our P1 prior runs, except for the PSD estimation.
+LIGO and Virgo have released posteriors for the O1 events [here](https://dcc.ligo.org/LIGO-T1800235/public), those are equivalent to our P1 prior runs, except for the method used to estimate the power spectral density (see below).
 
 The `hdf5` file contains three groups: 
 
