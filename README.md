@@ -36,7 +36,8 @@ If you need help with this, feel free to contact [Salvo](https://github.com/vita
 
 Each `hdf5` file contains posteriors samples obtained using the 8 priors described in Vitale et al,  [PRL  119, 251103 (2017)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.119.251103).
 
-The posteriors describes analysis on data avaliable from the [LIGO Open Science Center](https://losc.ligo.org/events/).
+The posteriors describes analysis on data available from the [LIGO Open Science Center](https://losc.ligo.org/events/).
+LIGO and Virgo have released posteriors for the O1 events [here](https://dcc.ligo.org/LIGO-T1800235/public), those are equivalent to our P1 prior runs, except for the PSD estimation.
 
 The `hdf5` file contains three groups: 
 
@@ -46,7 +47,7 @@ The `hdf5` file contains three groups:
 
 
 
-In turns, the priors and posteriors groups contain 8 subgroups, one for each of the priors P1...P8 of out paper.
+In turn, the priors and posteriors groups contain 8 subgroups, one for each of the priors P1...P8 of our paper.
 
 So for example (using python):
 
@@ -73,7 +74,7 @@ Those are (see [LVC, PRL 116, 241102](https://journals.aps.org/prl/abstract/10.1
 - `psi` (polarization angle, at 20Hz, rads)
 - `phase` (coalescence phase, rads)
 - `time `(gps arrival time at the geocenter, secs)
-- `ra` (rightascension, rads)
+- `ra` (right ascension, rads)
 - `dec` (declination, rads)
 - `theta_jn` (angle between the total angular momentum and the line of sight, rads)
 
@@ -91,7 +92,7 @@ All masses above are in the detector frame. We convert them to source-frame mass
 - `mc_source` (source-frame chirp mass, Msun)
 - `redshift`  
 
-The redshift is obtained from the gravitational-wave luminosity distance, assuming a [Plack 2015 cosmology](https://www.aanda.org/articles/aa/abs/2016/10/aa25830-15/aa25830-15.html). The values of the cosmological parameters are stored as attributes of the `posteriors` group:
+The redshift is obtained from the gravitational-wave luminosity distance, assuming a [Planck 2015 cosmology](https://www.aanda.org/articles/aa/abs/2016/10/aa25830-15/aa25830-15.html). The values of the cosmological parameters are stored as attributes of the `posteriors` group:
 
 ```python
 for (k,v) in data['posteriors'].attrs.iteritems():
@@ -146,7 +147,7 @@ The (natural log of the) Bayes Factor signal vs noise (e.g [LVC, PRL 116, 241102
 BayesSN=lognat_signal_evidence-lognat_noise_evidence
 ```
 
-Finally, the natural log of the Bayes factor between two different priors can be otained as e.g.
+Finally, the natural log of the Bayes factor between two different priors can be obtained as e.g.
 
 ```python
 p1_signev=data['posteriors']['P1'].attrs['signal_evidence']
@@ -181,8 +182,8 @@ Those will be different for different events, but the same for all priors.
 Thus, to plot the power spectrum used in the analysis of GW150914:
 
 ```python
-h1psd=data['PSD']
-l1psd=data['PSD']
+h1psd=data['PSD']['H1']
+l1psd=data['PSD']['L1']
 plt.loglog(h1psd['frequency'],h1psd['power_spectrum'],'r',label='H')
 plt.loglog(l1psd['frequency'],l1psd['power_spectrum'],'b',label='L')
 ```
