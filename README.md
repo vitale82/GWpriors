@@ -84,12 +84,17 @@ We also release some useful derived parameters:
 - `chi_p` (precessing spin, in the range [0,0.89])
 - `m1` (mass of the most massive object, Msun)
 - `m2` (mass of the least massive object, Msun)
+- `final_spin` (spin of the final black hole, dimensionless)
+- `final_mass` (mass of the final black hole, Msun)
+
+The final mass and spins are derived from the component mass and spins using the fits of [Healy et al. (2014)](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.90.104004), valid for spins aligned with the orbital angular momentum. Given that we provide posteriors for the two component masses and all spins degrees of freedom, the user can use their favorite prescription to calculate final mass and spin.
 
 All masses above are in the detector frame. We convert them to source-frame masses by dividing by (1+z). We provide the following supplementary parameters:
 
 - `m1_source` (source-frame m1, Msun)
 - `m2_source` (source-frame m2, Msun)
 - `mc_source` (source-frame chirp mass, Msun)
+- `final_mass_source` (source-frame mass of the final black hole, Msun)
 - `redshift`  
 
 The redshift is obtained from the gravitational-wave luminosity distance, assuming a [Planck 2015 cosmology](https://www.aanda.org/articles/aa/abs/2016/10/aa25830-15/aa25830-15.html). The values of the cosmological parameters are stored as attributes of the `posteriors` group:
