@@ -81,7 +81,7 @@ Those are (see [LVC, PRL 116, 241102](https://journals.aps.org/prl/abstract/10.1
 We also release some useful derived parameters:
 
 - `chi_eff` (effective inspiral spin, in the range [-0.89,0.89])
-- `chi_p` (precessing spin, in the range [0,0.89])
+- `chi_p` (precessing spin, in the range [0,0.89], at 20Hz)
 - `m1` (mass of the most massive object, Msun)
 - `m2` (mass of the least massive object, Msun)
 - `final_spin` (spin of the final black hole, dimensionless)
@@ -175,7 +175,7 @@ chi_eff_prior=data['priors']['P8']['chi_eff']
 
 
 Finally, the `PSD` group contains one group for each of the interferometers used in the analysis, H and L.
-The PSD were generated with the BayesWave algorithm [Littenberg and Cornish, PRD 91, 084034](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.91.084034)/
+The PSD were generated with the BayesWave algorithm [Littenberg and Cornish, PRD 91, 084034](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.91.084034)
 
 There are two datasets for each interferometer, 
 
