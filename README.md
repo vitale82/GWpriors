@@ -26,7 +26,7 @@ archivePrefix = "arXiv",
 }
 ```
 
-You can also cite this repository specifically, with its DOI: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1313235.svg)](https://zenodo.org/record/1313235#.W04iYdhKh24)
+You can also cite this repository specifically, with its DOI: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1313235.svg)](https://doi.org/10.5281/zenodo.1313235)
 
 
 If you need help with this, feel free to contact [Salvo](https://github.com/vitale82), [Davide](https://github.com/dgerosa), [Carl](https://github.com/cjhaster), [Katerina](https://github.com/kchatziioannou) or [Aaron](https://github.com/aaronbzimmerman).
